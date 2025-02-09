@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: tdBGColor,
+      backgroundColor: Colors.grey,
       appBar: buildAppBar(),
       body: Stack(
         children: [
@@ -40,8 +40,7 @@ class _HomeState extends State<Home> {
                   child: ListView(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 50,),
-                        child: Text('To Do List',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),),
+                        height: 10,
                       ),
                       for(ToDo todoo in _foundToDo.reversed)
                       ToDoItem(todo: todoo,onToDoChanged: _handleToDoChange,onDeleteItem: _deleteToDoItem,),
@@ -57,7 +56,7 @@ class _HomeState extends State<Home> {
               children: [
                 Expanded(
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+                      margin: EdgeInsets.only(bottom: 20,right: 10,left: 20),
                       padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5,),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -81,9 +80,9 @@ class _HomeState extends State<Home> {
                 ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom:15,right: 10),
+                  margin: EdgeInsets.only(bottom:20,right: 20),
                   child: ElevatedButton(
-                    child: Icon(Icons.add,color: Colors.white,size: 35),
+                    child: Icon(Icons.add,color: Colors.white,size: 20),
                     onPressed: () {
                       _addToDoItem(_todoController.text);
                     },
@@ -91,7 +90,7 @@ class _HomeState extends State<Home> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       primary: tdBlue,
                       minimumSize: Size(30,70),
-                      elevation: 20,
+                      elevation: 20,shadowColor: Colors.grey,
                     ),
 
                   ),
@@ -166,8 +165,8 @@ class _HomeState extends State<Home> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: tdBGColor,
-      elevation: 0,
+      backgroundColor: Colors.blueGrey,
+      elevation: 60,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -175,11 +174,12 @@ class _HomeState extends State<Home> {
             Icons.menu,
             color: tdBlack,
             size: 30,),
+          Text('To-Do List',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
           Container(
-            height: 40,
-            width: 40,
+            height: 50,
+            width: 50,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(50),
               child: Image.asset('assets/images/avatar.jpg'),
             ),
           )

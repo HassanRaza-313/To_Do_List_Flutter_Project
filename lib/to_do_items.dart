@@ -11,7 +11,7 @@ class ToDoItem extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(bottom: 12),
         child: ListTile(
           onTap: () {
             //print('Clicked');
@@ -26,7 +26,7 @@ class ToDoItem extends StatelessWidget{
           title: Text(todo.todoText! ,style: TextStyle(fontSize: 16,color: tdBlack,decoration: todo.isDone? TextDecoration.lineThrough : null),),
           trailing: Container(
             padding: EdgeInsets.all(0),
-            margin: EdgeInsets.symmetric(vertical: 8),
+            margin: EdgeInsets.symmetric(vertical: 5),
             height: 35,
             width: 35,
             decoration: BoxDecoration(
